@@ -851,121 +851,72 @@ const getHeatColor = (count: number) => {
       </section>
 
       {/* SECTION 10 – CONTACT */}
-      <section id="contact" className="py-24 border-t border-gray-200/60 relative overflow-hidden bg-white">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-orange-400/8 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 md:px-10 relative">
-          <div className="max-w-3xl mx-auto text-center space-y-6 mb-14">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest" style={{ color: "#F97316" }}>
-              <span className="w-4 h-px bg-current" />Contact<span className="w-4 h-px bg-current" />
-            </div>
-            <h2 className="text-3xl md:text-6xl font-black tracking-tight text-gray-900">
-              Let&apos;s Build Something<br />
-              <span style={{ background: "linear-gradient(135deg, #F97316, #FBBF24)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                Meaningful
-              </span>
-            </h2>
-            <p className="text-gray-500 text-lg">Open to collaborations, advisory roles, and meaningful conversations about technology and products.</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {[
-              { icon: <Mail size={18} />, label: "Email", value: "nasrullahmobo@gmail.com", href: "mailto:nasrullahmobo@gmail.com", color: "#F97316" },
-              { icon: <Phone size={18} />, label: "Phone", value: "+880184372036", href: "tel:+880184372036", color: "#10b981" },
-              { icon: <Github size={18} />, label: "GitHub", value: "mobashirslc-ctrl", href: "https://github.com/mobashirslc-ctrl", color: "#0F172A" },
-              { icon: <Linkedin size={18} />, label: "LinkedIn", value: "mobashir-ahmed", href: "https://linkedin.com/in/mobashir-ahmed-nasrullah", color: "#0891B2" },
-            ].map((contact) => (
-              <a
-                key={contact.label}
-                href={contact.href}
-                target={contact.href.startsWith("http") ? "_blank" : undefined}
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl border border-gray-200 bg-[#FAFAF8] p-6 text-center hover:border-gray-300 hover:shadow-lg hover:shadow-gray-100 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-              >
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: `radial-gradient(circle at center, ${contact.color}08, transparent 70%)` }}
-                />
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3 transition-transform group-hover:scale-110"
-                  style={{ background: contact.color + "15", color: contact.color }}
+      <section id="contact" className="py-24 border-t border-gray-200/60 bg-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            
+            {/* বাম পাশ: ফর্ম */}
+            <div className="bg-gray-50 p-8 md:p-10 rounded-3xl border border-gray-200 shadow-sm">
+              <h2 className="text-3xl font-black mb-6 text-gray-900">Start Your Project</h2>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <select 
+                  className="w-full p-4 border border-gray-200 rounded-xl bg-white focus:ring-2 focus:ring-orange-500 outline-none"
+                  onChange={(e) => setFormData({...formData, service: e.target.value})}
                 >
-                  {contact.icon}
+                  <option>Software Development</option>
+                  <option>Sales and Marketing</option>
+                  <option>Startup Consultation</option>
+                </select>
+                <input type="text" placeholder="Your Name" required className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none" onChange={(e) => setFormData({...formData, name: e.target.value})} />
+                <input type="email" placeholder="Email" required className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none" onChange={(e) => setFormData({...formData, email: e.target.value})} />
+                <input type="tel" placeholder="WhatsApp Number" required className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none" onChange={(e) => setFormData({...formData, phone: e.target.value})} />
+                <textarea placeholder="Project Details" className="w-full p-4 border border-gray-200 rounded-xl h-32 focus:ring-2 focus:ring-orange-500 outline-none" onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
+                <button type="submit" className="w-full bg-[#F97316] text-white py-4 rounded-xl font-bold hover:opacity-90 transition-all shadow-lg shadow-orange-200 flex items-center justify-center gap-2">
+                  <Send size={18} /> Submit Request
+                </button>
+              </form>
+            </div>
+
+            {/* ডান পাশ: ইনফো ও ঠিকানা */}
+            <div className="space-y-10">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900">Let's Connect</h2>
+                <p className="text-gray-500 text-lg">I am open to collaborations and meaningful conversations. Feel free to reach out directly.</p>
+              </div>
+
+              <div className="space-y-8">
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-3">Direct Contact</h4>
+                  <a href="mailto:nasrullahmobo@gmail.com" className="text-[#F97316] hover:underline block mb-1">nasrullahmobo@gmail.com</a>
+                  <a href="tel:+880184372036" className="text-gray-600 block">+880184372036</a>
                 </div>
-                <div className="text-xs text-gray-400 mb-1">{contact.label}</div>
-                <div className="text-xs font-medium text-gray-600 group-hover:text-gray-900 transition-colors break-all">{contact.value}</div>
-              </a>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <a
-              href="mailto:nasrullahmobo@gmail.com"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-base text-white transition-all duration-300 hover:opacity-90 hover:scale-[1.02] shadow-xl shadow-orange-200"
-              style={{ background: "linear-gradient(135deg, #F97316, #EA580C)" }}
-            >
-              Start a Conversation <ArrowRight size={18} />
-            </a>
+
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-3">Social & Office</h4>
+                  <div className="flex gap-4 mb-6">
+                    <a href="https://www.facebook.com/profile.php?id=100075573266820" target="_blank" rel="noopener noreferrer" className="p-3 bg-[#1877F2]/10 text-[#1877F2] rounded-xl hover:scale-110 transition-transform"><Facebook size={20} /></a>
+                    <a href="https://linkedin.com/in/mobashir-ahmed-nasrullah" target="_blank" rel="noopener noreferrer" className="p-3 bg-[#0891B2]/10 text-[#0891B2] rounded-xl hover:scale-110 transition-transform"><Linkedin size={20} /></a>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    <strong>Office Chamber:</strong><br />
+                    Level-5, Uttara Tower, Plot-1, Jashimuddin Avenue, Sector 3, Uttara, Dhaka, Bangladesh, 1230
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* FOOTER - একদম নিচে */}
       <footer className="py-8 border-t border-gray-200/60 bg-[#FAFAF8]">
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
-          <div className="text-sm text-gray-400">© 2025 Mobashir Ahmed Nasrullah</div>
+          <div className="text-sm text-gray-400">© 2026 Mobashir Ahmed Nasrullah</div>
           <div className="flex items-center gap-1 text-xs text-gray-400">
-            <span>Built with</span>
-            <span style={{ color: "#F97316" }}>♥</span>
-            <span>in Bangladesh</span>
-          </div>
-          <div className="flex items-center gap-3">
-            {[
-              { icon: <Github size={14} />, href: "https://github.com/mobashirslc-ctrl" },
-              { icon: <Linkedin size={14} />, href: "https://linkedin.com/in/mobashir-ahmed-nasrullah" },
-              { icon: <Mail size={14} />, href: "mailto:nasrullahmobo@gmail.com" },
-            ].map((s, i) => (
-              <a key={i} href={s.href} target="_blank" rel="noopener noreferrer"
-                className="w-7 h-7 rounded-lg border border-gray-200 bg-white flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-300 hover:shadow-sm transition-all">
-                {s.icon}
-              </a>
-            ))}
+            <span>Built with ♥ in Bangladesh</span>
           </div>
         </div>
       </footer>
-      {/* Work Order Section */}
-      <section className="py-16 bg-gray-50 px-4 mt-10">
-        <div className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-xl">
-          <h2 className="text-3xl font-bold mb-6 text-center">Start Your Project</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <select 
-              className="w-full p-3 border rounded-lg"
-              onChange={(e) => setFormData({...formData, service: e.target.value})}
-            >
-              <option>Software Development</option>
-              <option>Sales and Marketing</option>
-              <option>Startup Consultation</option>
-            </select>
-            <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-lg" required onChange={(e) => setFormData({...formData, name: e.target.value})} />
-            <input type="email" placeholder="Email" className="w-full p-3 border rounded-lg" required onChange={(e) => setFormData({...formData, email: e.target.value})} />
-            <input type="tel" placeholder="WhatsApp Number" className="w-full p-3 border rounded-lg" required onChange={(e) => setFormData({...formData, phone: e.target.value})} />
-            <textarea placeholder="Project Details" className="w-full p-3 border rounded-lg h-32" onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
-            <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-lg flex items-center justify-center gap-2">
-              <Send size={18} /> Submit Request
-            </button>
-          </form>
-        </div>
-      </section>
-
-      {/* Start Conversation Section */}
-      <div className="text-center py-10">
-        <a href="https://wa.me/880184372036" target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition">
-          Start Conversation
-        </a>
-      </div>
-
-      {/* Office Address Section */}
-      <div className="py-6 text-center border-t">
-        <p className="font-semibold text-gray-800">Office Chamber:</p>
-        <p className="text-sm text-gray-500">Level-5, Uttara Tower, Plot-1, Jashimuddin Avenue, Sector 3, Uttara, Dhaka, Bangladesh, 1230</p>
-      </div>
 
       {/* Floating WhatsApp Button */}
       <a 
@@ -976,8 +927,6 @@ const getHeatColor = (count: number) => {
       >
         <MessageCircle size={30} />
       </a>
-
-      {/* --- নতুন কোড শেষ --- */}
     </div>
   );
 }
