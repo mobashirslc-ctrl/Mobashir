@@ -383,8 +383,8 @@ export default function App() {
               </div>
               {/* Badge */}
               <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-orange-200 bg-orange-50 text-sm">
-                <span>🚀</span>
-                <span className="text-orange-700 text-xs font-medium">Building the Next Generation eCommerce Automation OS for Bangladesh</span>
+                
+                <span className="text-orange-700 text-xs font-medium">Empowering Bangladesh Through Next-Gen Tech Innovation</span>
               </div>
               {/* Headline */}
               <div className="space-y-2">
