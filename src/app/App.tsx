@@ -1,3 +1,4 @@
+import { MessageCircle, Send } from "lucide-react"; // হোয়াটসঅ্যাপ ও সেন্ড আইকনের জন্য
 import { useState, useEffect, useRef } from "react";
 import gorunLogoImg from "@/imports/gorun.png";
 import gtechLogoImg from "@/imports/gtech.png";
@@ -914,6 +915,54 @@ export default function App() {
           </div>
         </div>
       </footer>
+      {/* Work Order Section */}
+      <section className="py-16 bg-gray-50 px-4 mt-10">
+        <div className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-xl">
+          <h2 className="text-3xl font-bold mb-6 text-center">Start Your Project</h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <select 
+              className="w-full p-3 border rounded-lg"
+              onChange={(e) => setFormData({...formData, service: e.target.value})}
+            >
+              <option>Software Development</option>
+              <option>Sales and Marketing</option>
+              <option>Startup Consultation</option>
+            </select>
+            <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-lg" required onChange={(e) => setFormData({...formData, name: e.target.value})} />
+            <input type="email" placeholder="Email" className="w-full p-3 border rounded-lg" required onChange={(e) => setFormData({...formData, email: e.target.value})} />
+            <input type="tel" placeholder="WhatsApp Number" className="w-full p-3 border rounded-lg" required onChange={(e) => setFormData({...formData, phone: e.target.value})} />
+            <textarea placeholder="Project Details" className="w-full p-3 border rounded-lg h-32" onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
+            <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-lg flex items-center justify-center gap-2">
+              <Send size={18} /> Submit Request
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Start Conversation Section */}
+      <div className="text-center py-10">
+        <a href="https://wa.me/880184372036" target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white px-8 py-3 rounded-full font-bold hover:bg-green-700 transition">
+          Start Conversation
+        </a>
+      </div>
+
+      {/* Office Address Section */}
+      <div className="py-6 text-center border-t">
+        <p className="font-semibold text-gray-800">Office Chamber:</p>
+        <p className="text-sm text-gray-500">Level-5, Uttara Tower, Plot-1, Jashimuddin Avenue, Sector 3, Uttara, Dhaka, Bangladesh, 1230</p>
+      </div>
+
+      {/* Floating WhatsApp Button */}
+      <a 
+        href="https://wa.me/880184372036" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl z-50 hover:scale-110 transition-transform"
+      >
+        <MessageCircle size={30} />
+      </a>
+
+      {/* --- নতুন কোড শেষ --- */}
     </div>
   );
 }
