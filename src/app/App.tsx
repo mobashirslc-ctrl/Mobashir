@@ -280,7 +280,20 @@ const getHeatColor = (count: number) => {
   return "#EA580C";
 };
 
-export default function App() {
+
+  export default function App() {
+  // 1. নতুন স্টেট ও ফাংশন
+  const [formData, setFormData] = useState({ 
+    name: "", email: "", phone: "", service: "Software Development", message: "" 
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form Submitted:", formData);
+    alert("Request received! I will get back to you soon.");
+  };
+
+  // 2. পুরনো স্টেট ও হুকস (একবারই লিখবেন)
   const [activeNav, setActiveNav] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const statsRef = useInView();
@@ -288,6 +301,8 @@ export default function App() {
   const stat2 = useCounter(8, 2000, statsRef.inView);
   const stat3 = useCounter(2, 1500, statsRef.inView);
   const stat4 = useCounter(100, 2200, statsRef.inView);
+
+  // এরপর আপনার বাকি সব কোড (যেমন: const navItems = [...] ইত্যাদি)
 
   const navItems = [
     { id: "home", label: "Home" },
