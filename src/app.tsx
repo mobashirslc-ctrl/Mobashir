@@ -1,4 +1,4 @@
-import { MessageCircle, Send } from "lucide-react"; // হোয়াটসঅ্যাপ ও সেন্ড আইকনের জন্য
+import { MessageCircle, Send, Facebook, Linkedin } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import gorunLogoImg from "@/imports/gorun.png";
 import gtechLogoImg from "@/imports/gtech.png";
