@@ -752,8 +752,8 @@ const getHeatColor = (count: number) => {
               </div>
               <div className="mt-8 grid grid-cols-3 gap-4">
                 {[
-                  { label: "Workflows Automated", value: "500+" },
-                  { label: "Businesses Served", value: "50+" },
+                  { label: "Workflows Automated", value: "100+" },
+                  { label: "Businesses Served", value: "20+" },
                   { label: "Uptime SLA", value: "99.9%" },
                 ].map((m) => (
                   <div key={m.label} className="text-center">
