@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import gorunLogoImg from "@/imports/gorun.png";
+import gtechLogoImg from "@/imports/gtech.png";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import founderPhotoFormal from "@/imports/WhatsApp_Image_2026-02-16_at_11.27.06__1_.jpeg";
 import founderPhotoCasual from "@/imports/inbound7986166907321476416.jpg";
@@ -56,24 +58,16 @@ function useInView(threshold = 0.2) {
 
 // Platform Logo components (text-based, premium styled)
 function GorunLogo({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
-  const sizes = { sm: "text-xs px-2 py-1", md: "text-sm px-3 py-1.5", lg: "text-base px-4 py-2" };
+  const sizes = { sm: "h-6", md: "h-8", lg: "h-10" };
   return (
-    <div className={`inline-flex items-center gap-1.5 rounded-lg font-black tracking-tight ${sizes[size]}`}
-      style={{ background: "linear-gradient(135deg, #F97316, #EA580C)", color: "#fff" }}>
-      <span className="text-white/80">●</span>
-      <span>Gorun</span>
-    </div>
+    <img src={gorunLogoImg} alt="Gorun" className={`${sizes[size]} w-auto object-contain`} />
   );
 }
 
 function GTechLogo({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
-  const sizes = { sm: "text-xs px-2 py-1", md: "text-sm px-3 py-1.5", lg: "text-base px-4 py-2" };
+  const sizes = { sm: "h-6", md: "h-8", lg: "h-10" };
   return (
-    <div className={`inline-flex items-center gap-1.5 rounded-lg font-black tracking-tight ${sizes[size]}`}
-      style={{ background: "linear-gradient(135deg, #0F172A, #1e293b)", color: "#fff" }}>
-      <span style={{ color: "#F97316" }}>G</span>
-      <span>TECH</span>
-    </div>
+    <img src={gtechLogoImg} alt="GTech" className={`${sizes[size]} w-auto object-contain`} />
   );
 }
 
