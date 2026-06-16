@@ -648,7 +648,7 @@ export default function App() {
                 {
                   period: "2023 – 2025",
                   company: "Gorun Ltd.",
-                  role: "Head of Operations & Strategy",
+                  role: "Founder and Managing director",
                   desc: "Led operational strategy, process optimization, and technology initiatives across the organization.",
                   color: "#F97316",
                   logo: <GorunLogo size="sm" />,
@@ -657,7 +657,7 @@ export default function App() {
                 {
                   period: "Present",
                   company: "GTECH",
-                  role: "Founder & Full Stack Developer",
+                  role: "Head of Operation & Full Stack Developer",
                   desc: "Building SaaS products, ERP systems, business automation software, and digital ecosystems.",
                   color: "#0F172A",
                   logo: <GTechLogo size="sm" />,
